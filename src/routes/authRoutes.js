@@ -9,7 +9,7 @@ const rateLimit = require('express-rate-limit');
  */
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 5, // Limit each IP to 5 requests per windowMs
+  max: 10000, // Limit each IP to 10000 requests per windowMs
   handler: (req, res) => {
     const { errorResponse } = require('../utils/responseHelper');
     return errorResponse(res, 'Bạn đã thao tác quá nhiều lần, vui lòng thử lại sau', 429);
@@ -37,16 +37,16 @@ const { registrationRules, sendOTPRules } = require('../middleware/authValidator
 
 // Đăng ký
 router.post(
-  '/register/send-otp', 
-  sendOTPRules(), 
-  validate, 
+  '/register/send-otp',
+  sendOTPRules(),
+  validate,
   authController.sendOTP
 );
 
 router.post(
-  '/register', 
-  registrationRules(), 
-  validate, 
+  '/register',
+  registrationRules(),
+  validate,
   authController.register
 );
 

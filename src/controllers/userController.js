@@ -7,10 +7,16 @@ class UserController {
   async updateProfile(req, res) {
     try {
       const userId = req.user.id; // Lấy từ auth middleware
-      const { full_name, phone } = req.body;
+      const updateData = req.body;
+      const allowedUpdates = {};
 
       // Validation cơ bản theo UC04
-      if (!full_name) {
+      if (updateData.full_name) allowedUpdates.full_name = updateData.full_name;
+      if (updateData.phone) allowedUpdates.phone = updateData.phone;
+      if (updateData.student_id) allowedUpdates.student_id = updateData.student_id;
+      if (updateData.faculty) allowedUpdates.faculty = updateData.faculty;
+
+      if (!allowedUpdates.full_name) {
         return res.status(422).json({
           success: false,
           code: 422,
@@ -23,7 +29,7 @@ class UserController {
         });
       }
 
-      const updatedUser = await userService.updateProfile(userId, { full_name, phone });
+      const updatedUser = await userService.updateProfile(userId, allowedUpdates);
 
       return res.status(200).json({
         success: true,

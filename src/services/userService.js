@@ -13,6 +13,8 @@ class UserService {
       const allowedUpdates = {};
       if (updateData.full_name) allowedUpdates.full_name = updateData.full_name;
       if (updateData.phone) allowedUpdates.phone = updateData.phone;
+      if (updateData.student_id) allowedUpdates.student_id = updateData.student_id;
+      if (updateData.faculty) allowedUpdates.faculty = updateData.faculty;
 
       const user = await User.findByIdAndUpdate(
         userId,

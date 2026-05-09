@@ -1,0 +1,57 @@
+{
+	"id": "consolidated-results-uc01",
+	"name": "UTEShop_UC01_DangKy_Consolidated",
+	"timestamp": "2026-05-09T07:11:00.000Z",
+	"totalPass": 1,
+	"totalFail": 0,
+	"results": [
+		{
+			"source": "Run 3 (Success)",
+			"name": "Thành công (Register Success)",
+			"url": "http://localhost:5000/api/auth/register",
+			"time": 84,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {}
+		},
+		{
+			"source": "Run 2 (Errors)",
+			"name": "Lỗi - Sai mã OTP",
+			"url": "http://localhost:5000/api/auth/register",
+			"time": 13,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity"
+			},
+			"tests": {},
+			"testPassFailCounts": {}
+		},
+		{
+			"source": "Run 2 (Errors)",
+			"name": "Lỗi - Mật khẩu không đủ độ phức tạp",
+			"url": "http://localhost:5000/api/auth/register",
+			"time": 6,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity"
+			},
+			"tests": {},
+			"testPassFailCounts": {}
+		},
+		{
+			"source": "Run 2 (Errors)",
+			"name": "Lỗi - Email đã tồn tại",
+			"url": "http://localhost:5000/api/auth/register",
+			"time": 6,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity"
+			},
+			"tests": {},
+			"testPassFailCounts": {}
+		}
+	]
+}

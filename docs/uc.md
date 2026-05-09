@@ -89,7 +89,7 @@
 | :--- | :--- |
 | **Use Case ID** | UC04 |
 | **Use Case Name** | Cập nhật thông tin cá nhân |
-| **Description** | Là một Người dùng, tôi muốn cập nhật thông tin cá nhân của mình để hệ thống lưu trữ đúng dữ liệu liên lạc phục vụ cho quá trình xác thực và chăm sóc. |
+| **Description** | Là một Người dùng, tôi muốn khởi tạo hoặc cập nhật thông tin cá nhân của mình để hệ thống lưu trữ đúng dữ liệu liên lạc phục vụ cho quá trình xác thực và chăm sóc. |
 | **Actor(s)** | Người dùng (User) |
 | **Priority** | Must Have |
 | **Trigger** | Người dùng truy cập vào Menu "Tài khoản của tôi" và chọn tab "Hồ sơ cá nhân". |
@@ -97,8 +97,8 @@
 | **Post-Condition(s)** | Thông tin cá nhân mới được cập nhật thành công vào cơ sở dữ liệu. |
 | **Basic Flow** | 1. Người dùng truy cập tab "Hồ sơ cá nhân".<br>2. Hệ thống xác thực danh tính người dùng thông qua phiên làm việc hiện tại.<br>3. Nếu hợp lệ, hệ thống truy xuất dữ liệu cá nhân tương ứng và hiển thị trên biểu mẫu (Form).<br>4. Người dùng thực hiện chỉnh sửa các trường thông tin mong muốn (Họ tên, Số điện thoại).<br>5. Người dùng nhấn nút "Lưu thay đổi".<br>6. Hệ thống kiểm tra tính hợp lệ của dữ liệu đầu vào.<br>7. Hệ thống ghi nhận thông tin mới vào cơ sở dữ liệu.<br>8. Hệ thống hiển thị thông báo "Cập nhật thành công" và làm mới lại dữ liệu hiển thị. |
 | **Alternative Flow** | Không có. |
-| **Exception Flow** | 2a. Lỗi xác thực (Authentication): Nếu phiên làm việc (Token) không hợp lệ, bị giả mạo hoặc đã hết hạn, hệ thống sẽ từ chối truy cập, trả về lỗi "Unauthorized" và yêu cầu đăng nhập lại.<br>6a. Thiếu thông tin (Validation): Người dùng bỏ trống trường thông tin bắt buộc (Họ tên) hoặc sai định dạng. Hệ thống hiển thị thông báo lỗi bôi đỏ tại trường tương ứng và chặn lệnh lưu. |
-| **Business Rules** | - BR04-1: Người dùng không được phép thay đổi Email đăng nhập. Trường Email được đặt ở chế độ Read-only (Chỉ đọc) trên giao diện. |
+| **Exception Flow** | 2a. Lỗi xác thực (Authentication): Nếu phiên làm việc (Token) không hợp lệ, bị giả mạo hoặc đã hết hạn, hệ thống sẽ từ chối truy cập, trả về lỗi "Unauthorized" và yêu cầu đăng nhập lại.<br>3a. Hồ sơ chưa hoàn thiện (Initial Profile): Nếu đây là lần đầu truy cập, các trường thông tin sẽ hiển thị mặc định hoặc để trống, hệ thống yêu cầu người dùng điền đầy đủ để kích hoạt các tính năng nâng cao.<br>6a. Thiếu thông tin (Validation): Người dùng bỏ trống trường thông tin bắt buộc (Họ tên) hoặc sai định dạng. Hệ thống hiển thị thông báo lỗi bôi đỏ tại trường tương ứng và chặn lệnh lưu. |
+| **Business Rules** | - BR04-1: Người dùng không được phép thay đổi Email đăng nhập. Trường Email được đặt ở chế độ Read-only (Chỉ đọc) trên giao diện.<br>- BR04-2: Một số tính năng (như đặt hàng, làm shipper) yêu cầu phải có đầy đủ Số điện thoại và MSSV. |
 | **Non-Functional** | *(Để trống)* |
 
 #### 4.2. Sequence diagram

@@ -1,0 +1,150 @@
+{
+	"id": "ece54ddf-544a-46ce-b482-4adcbc2ba4fb",
+	"name": "UTEShop_UC03_QuenMK",
+	"timestamp": "2026-05-09T07:17:33.622Z",
+	"collection_id": "0-9575e759-08bb-4b63-90b6-b7e0d923ccee",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "a04590c3-76b5-4d69-8d24-3f3007e0c48c",
+			"name": "Thành công (OTP sent)",
+			"url": "http://localhost:5000/api/auth/forgot-password",
+			"time": 3109,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3109
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "db90ae6a-b477-41a8-858b-9b886f950ee8",
+			"name": "Lỗi - Email không tồn tại",
+			"url": "http://localhost:5000/api/auth/forgot-password",
+			"time": 8,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				8
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "9db3f653-c05c-4800-84ff-57a17c62c3cf",
+			"name": "Lỗi - Email để trống",
+			"url": "http://localhost:5000/api/auth/forgot-password",
+			"time": 4,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d3e4327d-9cb5-4967-aa16-55b5e05ec5bb",
+			"name": "Lỗi - Sai mã OTP",
+			"url": "http://localhost:5000/api/auth/reset-password",
+			"time": 15,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				15
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "1cb4f0dd-18cf-4104-bf26-dcc4a77e7317",
+			"name": "Lỗi - Mật khẩu yếu",
+			"url": "http://localhost:5000/api/auth/reset-password",
+			"time": 3,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "2aa066fb-a538-4b79-a462-9e7679ed9830",
+			"name": "Thành công (Reset Success)",
+			"url": "http://localhost:5000/api/auth/reset-password",
+			"time": 108,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				108
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 3247,
+	"collection": {
+		"requests": [
+			{
+				"id": "a04590c3-76b5-4d69-8d24-3f3007e0c48c",
+				"method": "POST"
+			},
+			{
+				"id": "db90ae6a-b477-41a8-858b-9b886f950ee8",
+				"method": "POST"
+			},
+			{
+				"id": "9db3f653-c05c-4800-84ff-57a17c62c3cf",
+				"method": "POST"
+			},
+			{
+				"id": "d3e4327d-9cb5-4967-aa16-55b5e05ec5bb",
+				"method": "POST"
+			},
+			{
+				"id": "1cb4f0dd-18cf-4104-bf26-dcc4a77e7317",
+				"method": "POST"
+			},
+			{
+				"id": "2aa066fb-a538-4b79-a462-9e7679ed9830",
+				"method": "POST"
+			}
+		]
+	}
+}
