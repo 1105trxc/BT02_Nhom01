@@ -14,5 +14,22 @@ const { loginLimiter } = require('../middleware/rateLimiter');
  * 4. authController.login → AuthController → AuthService.authenticate()
  */
 router.post('/login', loginLimiter, loginRules, handleValidation, authController.login);
+const { validate } = require('../middleware/validator');
+const { registrationRules, sendOTPRules } = require('../middleware/authValidator');
+
+// Đăng ký
+router.post(
+  '/register/send-otp', 
+  sendOTPRules(), 
+  validate, 
+  authController.sendOTP
+);
+
+router.post(
+  '/register', 
+  registrationRules(), 
+  validate, 
+  authController.register
+);
 
 module.exports = router;
