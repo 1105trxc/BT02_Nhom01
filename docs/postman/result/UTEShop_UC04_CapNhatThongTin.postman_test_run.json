@@ -1,0 +1,128 @@
+{
+	"id": "6734a7d3-b877-483c-a390-0a134e5ad36f",
+	"name": "UTEShop_UC04_CapNhatThongTin",
+	"timestamp": "2026-05-09T07:29:15.585Z",
+	"collection_id": "0-86171345-753a-439d-bde9-6d4ef4a60b96",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "5685f6b4-b7c9-4660-bece-1cd0364a931b",
+			"name": "Thành công (Get Profile Success)",
+			"url": "http://localhost:5000/api/users/profile",
+			"time": 15,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				15
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "745823a0-96f3-4e81-9909-41012bc8ab06",
+			"name": "Lỗi - Chưa đăng nhập (Unauthorized)",
+			"url": "http://localhost:5000/api/users/profile",
+			"time": 3,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "b6241d25-6a57-4dad-9772-0ca35a9a6033",
+			"name": "Thành công (Update Success)",
+			"url": "http://localhost:5000/api/users/profile",
+			"time": 6,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "2a52d13f-a154-44dc-b1d7-0386a66dfe0c",
+			"name": "Lỗi - Họ tên để trống (Validation Error)",
+			"url": "http://localhost:5000/api/users/profile",
+			"time": 6,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "4e7f2a32-b2b6-48d0-872a-1008bad608be",
+			"name": "Lỗi - Token không hợp lệ",
+			"url": "http://localhost:5000/api/users/profile",
+			"time": 4,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 34,
+	"collection": {
+		"requests": [
+			{
+				"id": "5685f6b4-b7c9-4660-bece-1cd0364a931b",
+				"method": "GET"
+			},
+			{
+				"id": "745823a0-96f3-4e81-9909-41012bc8ab06",
+				"method": "GET"
+			},
+			{
+				"id": "b6241d25-6a57-4dad-9772-0ca35a9a6033",
+				"method": "PUT"
+			},
+			{
+				"id": "2a52d13f-a154-44dc-b1d7-0386a66dfe0c",
+				"method": "PUT"
+			},
+			{
+				"id": "4e7f2a32-b2b6-48d0-872a-1008bad608be",
+				"method": "PUT"
+			}
+		]
+	}
+}

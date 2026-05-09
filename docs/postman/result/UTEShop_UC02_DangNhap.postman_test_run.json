@@ -1,0 +1,106 @@
+{
+	"id": "86460c08-e192-4f90-beb7-c0651a94075c",
+	"name": "UTEShop_UC02_DangNhap",
+	"timestamp": "2026-05-09T07:13:14.697Z",
+	"collection_id": "0-d828eda6-8f16-4ef6-bb87-1622a5529cff",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "480a2c12-e5a4-458c-8e10-a9c6f8d52d81",
+			"name": "Thành công (Login Success)",
+			"url": "http://localhost:5000/api/auth/login",
+			"time": 142,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				142
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "0187b6be-0109-4b67-b429-3d7da0ee0509",
+			"name": "Lỗi - Sai mật khẩu (Invalid Credentials)",
+			"url": "http://localhost:5000/api/auth/login",
+			"time": 85,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				85
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "ee3831af-ab6e-4701-b8e8-6e9a96fd758d",
+			"name": "Lỗi - Email không tồn tại",
+			"url": "http://localhost:5000/api/auth/login",
+			"time": 6,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "9b557dd5-0159-4173-bf8d-cca949bf7b9e",
+			"name": "Lỗi - Thiếu thông tin (Validation Error)",
+			"url": "http://localhost:5000/api/auth/login",
+			"time": 4,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 237,
+	"collection": {
+		"requests": [
+			{
+				"id": "480a2c12-e5a4-458c-8e10-a9c6f8d52d81",
+				"method": "POST"
+			},
+			{
+				"id": "0187b6be-0109-4b67-b429-3d7da0ee0509",
+				"method": "POST"
+			},
+			{
+				"id": "ee3831af-ab6e-4701-b8e8-6e9a96fd758d",
+				"method": "POST"
+			},
+			{
+				"id": "9b557dd5-0159-4173-bf8d-cca949bf7b9e",
+				"method": "POST"
+			}
+		]
+	}
+}
