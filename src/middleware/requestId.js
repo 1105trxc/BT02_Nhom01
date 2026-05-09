@@ -12,3 +12,9 @@ const requestIdMiddleware = (req, res, next) => {
 };
 
 module.exports = requestIdMiddleware;
+const requestId = (req, res, next) => {
+  req.id = uuidv4();
+  next();
+};
+
+module.exports = requestId;
