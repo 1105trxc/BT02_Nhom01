@@ -1,18 +1,28 @@
 require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
 const connectDB = require('./config/db');
+const authRoutes = require('./routes/authRoutes');
 
-// Khởi tạo kết nối Database
-connectDB().then(async () => {
-  // Tạo dữ liệu mẫu nếu database trống
-  const Category = require('./models/Category');
-  const count = await Category.countDocuments();
-  if (count === 0) {
-    await Category.create({
-      name: 'Hàng gia dụng',
-      slug: 'hang-gia-dung',
-      description: 'Các sản phẩm thiết yếu cho gia đình'
-    });
-    console.log('✅ Created initial sample category.');
-  }
-  console.log('🚀 All UTEShop Database Models (11 collections) have been initialized and synchronized with db_plan.md.');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// ── Middleware toàn cục ──
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// ── Routes ──
+app.use('/api/auth', authRoutes);
+
+// ── Health check ──
+app.get('/', (req, res) => {
+  res.json({ success: true, message: 'UTEShop API is running' });
+});
+
+// ── Khởi động server ──
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`🚀 UTEShop API Server running on http://localhost:${PORT}`);
+  });
 });
